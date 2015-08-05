@@ -6,7 +6,7 @@ require 'pry'
 puts "I'm a calculator. I do basic calcs if provided with two numbers"
 puts "try me"
 
-# get input 1
+# get first number
 
 print "What's the first number: "
 number_1 = gets.chomp
@@ -15,11 +15,11 @@ until number_1 != ""
   number_1 = gets.chomp
 end
 
-# get input 2
+# get second number
 
 print "What's the second number: "
 number_2 = gets.chomp
-until number_1 != ""
+until number_2 != ""
   puts "you must enter a number. Try again: "
   number_2 = gets.chomp
 end
@@ -37,9 +37,6 @@ until calc_input.to_i.between?(1, 4)
   puts "you must enter a number between 1 and 3. Try again: "
   calc_input = gets.chomp
 end
-
-
-
 
 # do calc
 
