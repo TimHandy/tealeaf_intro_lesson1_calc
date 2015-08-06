@@ -3,26 +3,28 @@
 
 require 'pry'
 
-puts "I'm a calculator. I do basic calcs if provided with two numbers"
-puts "try me"
+puts "I'm a calculator. I do basic calcs if provided with two numbers."
+puts "try me..."
+
+
+def ask(which_number)
+  number = ""
+  while number == "" do
+    print "what's the #{which_number} number: "
+    number = gets.chomp
+  end
+  number
+end
 
 # get first number
 
-print "What's the first number: "
-number_1 = gets.chomp
-until number_1 != ""
-  puts "you must enter a number. Try again: "
-  number_1 = gets.chomp
-end
+number_1 = ask("first")
+number_2 = ask("second")
 
-# get second number
+puts number_1
+puts number_2
 
-print "What's the second number: "
-number_2 = gets.chomp
-until number_2 != ""
-  puts "you must enter a number. Try again: "
-  number_2 = gets.chomp
-end
+
 
 # get calc option
 
@@ -40,12 +42,13 @@ end
 
 # do calc
 
-answer = case calc_input
-when "1" then number_1.to_f + number_2.to_f
-when "2" then number_1.to_f - number_2.to_f
-when "3" then number_1.to_f * number_2.to_f
-when "4" then number_1.to_f / number_2.to_f
-end
+answer = 
+  case calc_input
+  when "1" then number_1.to_i + number_2.to_i
+  when "2" then number_1.to_i - number_2.to_i
+  when "3" then number_1.to_i * number_2.to_i
+  when "4" then number_1.to_f / number_2.to_f
+  end
 
 
 puts "The answer is #{answer}"
